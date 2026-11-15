@@ -9,14 +9,14 @@ const initialProducts=[
   {id: 5, name: "Penghapus", price: 3000},
 ];
 
-const Price = (value) => "Rp" + value.toLocalString("id-ID");
+const Price = (value) => "Rp" + value.toLocaleString("id-ID");
 
 function ProductCard({product, onEdit, onDelete}){//display
   return(
     <article className="card">
       <small>ID: {product.id}</small>
       <h3>{product.name}</h3>
-      <p className="Price">{formatPrice(product.price)}</p>
+      <p className="price">{Price(product.price)}</p>
       <div className="actions">
         <button className="btn outline" onClick={() => onEdit(product)}>
           Edit
@@ -55,7 +55,7 @@ function ProductForm({product, onSave, onClose}){
   }
 
   return(
-    <Modal onCose={onClose}>
+    <Modal onClose={onClose}>
       <h2>{isEdit ? "Edit Produk" : "Tambah Produk"}</h2>
       <p className="muted">
         {isEdit
@@ -106,7 +106,7 @@ function DeleteConfirm({ product, onConfirm, onClose}){
       <div className="preview">
         <small>ID: {product.id}</small>
         <h3>{product.name}</h3>
-        <p className="price">{formatPrice(product.price)}</p>
+        <p className="price">{Price(product.price)}</p>
       </div>
       <div className="actions end">
         <button className="btn outline" onClick={onClose}>
@@ -152,7 +152,7 @@ export default function App(){
           <h1>Manajemen produk</h1>
           <p className="muted">Kelola daftar produk dan harga dalam satu tempat.</p>
         </div>
-        <button className="btn primary" onClick={() => setModal({type: "Add"})}>
+        <button className="btn primary" onClick={() => setModal({type: "add"})}>
           +Tambah Produk
         </button>
       </header>
@@ -187,13 +187,13 @@ export default function App(){
       </p>
 
       {modal?.type === "add" && (
-        <ProductForm product={null} onSsave={handleSave} onClose={() => setModal(null)} />
+        <ProductForm product={null} onSave={handleSave} onClose={() => setModal(null)} />
       )}
       {modal?.type === "edit" && (
-        <ProductForm product={modal.product} onSsave={handleSave} onClose={() => setModal(null)} />
+        <ProductForm product={modal.product} onSave={handleSave} onClose={() => setModal(null)} />
       )}
       {modal?.type === "delete" && (
-        <ProductForm product={modal.product} onSsave={handleDelete} onClose={() => setModal(null)} />
+        <DeleteConfirm product={modal.product} onConfirm={handleDelete} onClose={() => setModal(null)} />
       )}
     </main>
   );
