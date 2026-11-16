@@ -120,7 +120,7 @@ function DeleteConfirm({ product, onConfirm, onClose}){
   );
 }
 
-export default function App(){
+export default function App(){//html
   const [products, setProducts] = useState(initialProducts);
   const [keyword, setKeyword] = useState("");
   const [modal, setModal] = useState(null);
