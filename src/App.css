@@ -216,3 +216,101 @@ label {
 .preview .price {
   margin: 0;
 }
+
+textarea{
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  background: white;
+  resize: vertical;
+}
+textarea:focus-visible, a:focus-visible{
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.modal{
+  max-height: 92vh;
+  overflow-y: auto;
+}
+
+a{
+  color: var(--blue);
+}
+
+.detail-link{
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.9 rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.detail-link:hover, .back:hover{
+  text-decoration: underline;
+}
+.detail{
+  background: white;
+  border: 1px solid white;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.back{
+  display: inline-block;
+  margin-bottom: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.price.big{
+  font-size: 1.5 rem;
+  margin-bottom: 10px;
+}
+
+.badge{
+  display: inline-block;
+  background: white;
+  color: var(--blue);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.85 rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.specs{
+  width: 100%;
+  border-collapse: collapse;
+}
+.specs th, .specs td{
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgb(236, 230, 230);
+}
+.specs th{
+  width: 40%;
+  color: val(--muted);
+  font-weight: 600;
+}
+
+.not-found{
+  text-align: center;
+  padding-top: 96px;
+}
+.not-found .code{
+  font-size: 5rem;
+  font-weight: 800;
+  color: var(--blue);
+  margin: 0;
+  line-height: 1;
+}
+.not-found h1{
+  margin: 12px 0 8px;
+}
+.not-found .btn{
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+}
